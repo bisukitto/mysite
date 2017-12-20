@@ -1,0 +1,19 @@
+<!-- home.html -->
+
+{% for post in post_list %}
+    <div>
+    	<div class="date">'The Date' {{ post.created_at|date:"Y / m / d" }}</div>
+    {{ post.title }}
+    {{ post.created_at }}
+    {% if post.photo %}
+	<div class="thumbnail">
+	    <img src="{{ post.photo }}" alt="">
+	</div>
+    {% else %}
+	    <div class="thumbnail thumbnail-default"></div>
+    {% endif %}
+    {{ post.content }}
+     <p>
+    </div>
+{% endfor %}
+
